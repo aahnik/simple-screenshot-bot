@@ -15,7 +15,7 @@ browser, page = None, None
 
 async def start_browser():
     global browser, page
-    browser = await launch(headless=True)
+    browser = await launch()
     page = await browser.newPage()
 
 
