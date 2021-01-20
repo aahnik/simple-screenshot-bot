@@ -2,7 +2,7 @@ import os
 import time
 from telethon import TelegramClient, events
 from pyppeteer import launch
-from settings import API_ID, API_HASH, BOT_TOKEN,PORT
+from settings import API_ID, API_HASH, BOT_TOKEN
 from utils import fetch_urls
 import logging
 
