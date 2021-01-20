@@ -16,7 +16,7 @@ browser, page = None, None
 
 async def start_browser():
     global browser, page
-    browser = await launch(args=['--no-sandbox'])
+    browser = await launch(headless=True,args=['--no-sandbox'])
     page = await browser.newPage()
 
 
@@ -27,7 +27,7 @@ async def start(event):
     raise events.StopPropagation
 
 
-@bot.on(events.NewMessage)
+@bot.on(events.NewMessage(outgoing=False))
 async def echo(event):
     try:
         urls = fetch_urls(event.text)
