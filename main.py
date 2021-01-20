@@ -2,7 +2,7 @@ import os
 import time
 from telethon import TelegramClient, events
 from pyppeteer import launch
-from settings import API_ID, API_HASH, BOT_TOKEN,cl
+from settings import API_ID, API_HASH, BOT_TOKEN,WIDTH,HEIGHT
 from utils import fetch_urls
 import logging
 
@@ -18,7 +18,7 @@ async def start_browser():
     global browser, page
     browser = await launch(headless=True,args=['--no-sandbox'])
     page = await browser.newPage()
-
+    await page.setViewport({'width':WIDTH,'height':HEIGHT})
 
 @bot.on(events.NewMessage(pattern='/start'))
 async def start(event):
@@ -34,6 +34,7 @@ async def echo(event):
         for url in urls:
             logging.info(url)
             await page.goto(url)
+
 
             file_name = f'{time.time()}.png'
             await page.screenshot(path=file_name, fullPage=False)
