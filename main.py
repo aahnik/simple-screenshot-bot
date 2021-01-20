@@ -15,7 +15,7 @@ browser, page = None, None
 
 async def start_browser():
     global browser, page
-    browser = await launch(headless=True, args=['--no-sandbox'])
+    browser = await launch(executablePath='/app/.chromedriver/bin/chromedriver' ,headless=True, args=['--no-sandbox'])
     page = await browser.newPage()
 
 
