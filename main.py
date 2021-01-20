@@ -16,7 +16,7 @@ browser, page = None, None
 
 async def start_browser():
     global browser, page
-    browser = await launch(cl)
+    browser = await launch(args=['--no-sandbox'])
     page = await browser.newPage()
 
 
