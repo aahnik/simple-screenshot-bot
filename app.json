@@ -9,6 +9,13 @@
   "website": "https://aahnik.github.io",
   "repository": "https://github.com/aahniks/simple-screenshot-bot",
   "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/1024px-Telegram_logo.svg.png",
+
+  "buildpacks": [
+    {
+      "url": "heroku-buildpack-chromedriver"
+    }
+  ],
+
   "env": {
     "API_ID": {
       "description": "The API ID obtained from https://my.telegram.org/auth",

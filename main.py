@@ -2,7 +2,7 @@ import os
 import time
 from telethon import TelegramClient, events
 from pyppeteer import launch
-from settings import API_ID, API_HASH, BOT_TOKEN
+from settings import API_ID, API_HASH, BOT_TOKEN,PORT
 from utils import fetch_urls
 import logging
 
@@ -15,7 +15,7 @@ browser, page = None, None
 
 async def start_browser():
     global browser, page
-    browser = await launch()
+    browser = await launch(headless=True, args=['--no-sandbox'])
     page = await browser.newPage()
 
 
