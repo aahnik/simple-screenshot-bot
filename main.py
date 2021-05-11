@@ -38,7 +38,7 @@ async def echo(event):
 
             file_name = f'{time.time()}.png'
             await page.screenshot(path=file_name, fullPage=False)
-            await event.reply(event.text, file=file_name)
+            await event.reply(file=file_name)
             os.remove(file_name)
 
     except Exception as err:
