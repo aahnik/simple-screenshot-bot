@@ -1,5 +1,5 @@
 appdirs==1.4.4
-Pillow==8.1.1
+Pillow==8.2.0
 pyaes==1.6.1
 pyasn1==0.4.8
 pyee==8.1.0
